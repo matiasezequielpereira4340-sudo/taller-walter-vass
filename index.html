@@ -1,399 +1,383 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller Walter Vass | Soluciones Rápidas y Confiables para tu Auto y Flota</title>
-    <meta name="description" content="Diagnóstico honesto, rehparación rápida y garantía en Villa Lynch. Expertos en mecánica general y flotas. ¡Tu auto en las mejores manos!">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body { font-family: 'Arial', sans-serif; }
-        .hero-bg { background-image: url('https://www.tallerwaltervass.com.ar/img/hero-bg.jpg'); background-size: cover; background-position: center; }
-        .cta-whatsapp { background-color: #25D366; color: white; }
-        .cta-phone { background-color: #3B82F6; color: white; }
-        .section-flotas { background-color: #1F2937; color: white; }
-        .form-container { background-color: #F3F4F6; }
-        .logo-img { height: 40px; width: auto; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller Walter Vass | Mecánica Integral en Villa Lynch</title>
+<meta name="description" content="Diagnóstico honesto, reparación rápida y garantía en Villa Lynch. Expertos en mecánica general, electrónica del motor, aire acondicionado y suspensión. Atención a particulares y flotas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --rojo:#E11D2A;
+  --rojo-dark:#A6121C;
+  --negro:#0A0A0B;
+  --gris-900:#111114;
+  --gris-800:#1A1A1F;
+  --gris-700:#26262D;
+  --gris-300:#C9CCD1;
+  --gris-200:#E5E7EB;
+  --blanco:#FFFFFF;
+  --whatsapp:#25D366;
+  --shadow-lg: 0 25px 50px -12px rgba(0,0,0,.7);
+  --shadow-md: 0 12px 30px -8px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#1A1A1F;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
 
-    <!-- Google Tag Manager (simulado) -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-    <!-- End Google Tag Manager -->
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,11,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1200px;margin:0 auto}
+.nav-logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.5px}
+.nav-logo img{height:42px;width:auto}
+.nav-links{display:none;gap:28px;color:#fff;font-weight:500;font-size:14.5px}
+.nav-links a{opacity:.85;transition:.2s}
+.nav-links a:hover{opacity:1;color:var(--rojo)}
+.nav-cta{display:none;background:var(--rojo);color:#fff;padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:.2s;box-shadow:0 8px 20px -6px rgba(225,29,42,.6)}
+.nav-cta:hover{background:var(--rojo-dark);transform:translateY(-1px)}
+@media(min-width:900px){
+  .nav-links{display:flex}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px}
+}
 
-    <!-- Global site tag (gtag.js) - Google Analytics / Google Ads (simulado) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); // GA4 Measurement ID
-      gtag('config', 'AW-YYYYYYYYY'); // Google Ads Conversion ID
-    </script>
-    <!-- End Global site tag -->
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;background-image:url('hero-bg.jpg');background-size:cover;background-position:center;filter:contrast(1.1) saturate(1.05) brightness(.9);transform:scale(1.05);z-index:-2}
+.hero-overlay{position:absolute;inset:0;background:
+  radial-gradient(80% 60% at 30% 40%, rgba(0,0,0,.25), transparent 70%),
+  linear-gradient(180deg, rgba(10,10,11,.55) 0%, rgba(10,10,11,.65) 40%, rgba(10,10,11,.92) 100%),
+  linear-gradient(90deg, rgba(10,10,11,.7) 0%, rgba(10,10,11,.2) 60%, rgba(10,10,11,.55) 100%);
+  z-index:-1}
+.hero-content{padding:140px 0 100px;max-width:760px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(225,29,42,.15);border:1px solid rgba(225,29,42,.4);color:#FCA5A5;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:22px;backdrop-filter:blur(6px)}
+.hero h1{font-family:'Bebas Neue',Inter,sans-serif;font-weight:400;font-size:clamp(2.4rem,7vw,5.2rem);line-height:1;letter-spacing:1px;text-shadow:0 4px 30px rgba(0,0,0,.6);margin-bottom:18px}
+.hero h1 span{color:var(--rojo);display:block}
+.hero-sub{font-size:clamp(1rem,2.2vw,1.25rem);color:#D1D5DB;max-width:600px;margin-bottom:34px;font-weight:400}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;border-radius:12px;padding:14px 26px;font-size:15.5px;transition:.25s;cursor:pointer;border:none}
+.btn-primary{background:var(--rojo);color:#fff;box-shadow:0 14px 30px -10px rgba(225,29,42,.7)}
+.btn-primary:hover{background:var(--rojo-dark);transform:translateY(-2px);box-shadow:0 18px 36px -10px rgba(225,29,42,.8)}
+.btn-whatsapp{background:var(--whatsapp);color:#fff;box-shadow:0 14px 30px -10px rgba(37,211,102,.6)}
+.btn-whatsapp:hover{background:#1FB856;transform:translateY(-2px)}
+.btn-outline{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px)}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:42px;color:#9CA3AF;font-size:14px}
+.hero-trust div{display:flex;align-items:center;gap:8px}
+.hero-trust i{color:var(--rojo)}
 
-    <!-- Meta Pixel Code (simulado) -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_META_PIXEL_ID');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+/* SECTION TITLE */
+.section{padding:90px 0}
+.section-dark{background:linear-gradient(180deg,#0A0A0B 0%,#111114 100%);color:#fff}
+.section-light{background:#F7F7F8}
+.section-title{text-align:center;margin-bottom:60px}
+.section-eyebrow{display:inline-block;color:var(--rojo);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.section-title h2{font-family:'Bebas Neue',Inter,sans-serif;font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;letter-spacing:.5px;margin-bottom:14px}
+.section-title p{max-width:680px;margin:0 auto;color:#6B7280;font-size:17px}
+.section-dark .section-title p{color:#9CA3AF}
 
+/* PROBLEMS */
+.problems{display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:768px){.problems{grid-template-columns:repeat(3,1fr)}}
+.problem-card{background:#fff;border-radius:18px;padding:32px 26px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.04);border:1px solid #EEF0F2;transition:.3s}
+.problem-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -10px rgba(0,0,0,.12)}
+.problem-card i{font-size:36px;color:var(--rojo);margin-bottom:18px}
+.problem-card h3{font-size:1.25rem;font-weight:700;margin-bottom:10px}
+.problem-card p{color:#6B7280;font-size:15px}
+
+/* SERVICES */
+.services-grid{display:grid;gap:22px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:768px){.services-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
+.service{position:relative;border-radius:20px;overflow:hidden;background:#1A1A1F;aspect-ratio:4/5;cursor:pointer;transition:.4s;box-shadow:var(--shadow-md)}
+.service:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.service-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease;filter:brightness(.85) contrast(1.1) saturate(1.05)}
+.service:hover .service-img{transform:scale(1.08)}
+.service-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.1) 0%,rgba(10,10,11,.35) 45%,rgba(10,10,11,.95) 100%)}
+.service-content{position:absolute;left:0;right:0;bottom:0;padding:20px 18px;color:#fff;z-index:2}
+.service-icon{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:var(--rojo);color:#fff;font-size:14px;margin-bottom:10px;box-shadow:0 8px 18px -6px rgba(225,29,42,.7)}
+.service-title{font-size:clamp(1rem,2.1vw,1.25rem);font-weight:700;line-height:1.2;margin-bottom:6px}
+.service-desc{font-size:13.5px;color:#D1D5DB;line-height:1.45;display:none}
+@media(min-width:768px){
+  .service{aspect-ratio:3/4}
+  .service-content{padding:26px 24px}
+  .service-icon{width:46px;height:46px;font-size:16px;margin-bottom:14px}
+  .service-desc{display:block;font-size:14.5px}
+}
+
+/* FLOTAS */
+.flotas{position:relative;background:linear-gradient(135deg,#1F2937 0%,#0A0A0B 100%);color:#fff;border-radius:24px;padding:50px 26px;text-align:center;overflow:hidden;margin-top:30px}
+.flotas::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 80% 20%,rgba(225,29,42,.2),transparent 60%);pointer-events:none}
+.flotas-eyebrow{display:inline-block;color:#FCA5A5;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;position:relative}
+.flotas h3{font-family:'Bebas Neue',Inter,sans-serif;font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.1;margin-bottom:14px;position:relative}
+.flotas p{color:#D1D5DB;max-width:620px;margin:0 auto 28px;font-size:16px;position:relative}
+.btn-flota{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--rojo);color:#fff;padding:16px 28px;border-radius:14px;font-weight:700;font-size:15px;line-height:1.3;text-align:center;max-width:100%;white-space:normal;word-break:break-word;hyphens:auto;box-shadow:0 16px 36px -10px rgba(225,29,42,.7);transition:.25s;position:relative}
+.btn-flota:hover{background:var(--rojo-dark);transform:translateY(-2px)}
+@media(max-width:480px){.btn-flota{width:100%;font-size:14px;padding:14px 18px}}
+@media(min-width:768px){.flotas{padding:70px 50px}}
+
+/* GALERIA */
+.galeria{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:768px){.galeria{grid-template-columns:repeat(4,1fr);gap:18px}}
+.galeria figure{aspect-ratio:4/3;border-radius:14px;overflow:hidden;position:relative}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.galeria figure:hover img{transform:scale(1.06)}
+
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,var(--rojo) 0%,var(--rojo-dark) 100%);color:#fff;text-align:center;padding:80px 20px;border-radius:0}
+.cta-final h2{font-family:'Bebas Neue',Inter,sans-serif;font-size:clamp(2rem,5vw,3.4rem);margin-bottom:14px}
+.cta-final p{max-width:600px;margin:0 auto 30px;font-size:17px;opacity:.95}
+.cta-final .btn-whatsapp{box-shadow:0 14px 30px -8px rgba(0,0,0,.4)}
+
+/* FOOTER */
+footer{background:#0A0A0B;color:#9CA3AF;padding:60px 0 30px}
+.footer-grid{display:grid;gap:36px;grid-template-columns:1fr}
+@media(min-width:768px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.footer-brand img{height:50px;margin-bottom:14px}
+.footer-brand p{font-size:14px;line-height:1.6}
+footer h4{color:#fff;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+footer ul a{display:flex;align-items:center;gap:10px;transition:.2s}
+footer ul a:hover{color:var(--rojo)}
+footer ul i{color:var(--rojo);width:18px}
+.footer-bottom{border-top:1px solid #1F2937;margin-top:40px;padding-top:22px;text-align:center;font-size:13px}
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:22px;right:22px;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 10px 25px -5px rgba(37,211,102,.6);z-index:60;transition:.25s;animation:pulse 2.4s infinite}
+.wa-float:hover{transform:scale(1.08)}
+@keyframes pulse{0%,100%{box-shadow:0 10px 25px -5px rgba(37,211,102,.6)}50%{box-shadow:0 10px 25px -5px rgba(37,211,102,.6),0 0 0 14px rgba(37,211,102,0)}}
+</style>
 </head>
-<body class="text-gray-800">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<body>
 
-    <!-- Header -->
-    <header class="bg-gray-900 text-white py-4">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="#" class="flex items-center">
-                <img src="walter_vass_logo.png" alt="Taller Walter Vass Logo" class="logo-img mr-3">
-            </a>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#servicios" class="hover:text-green-400">Servicios</a></li>
-                    <li><a href="#flotas" class="hover:text-green-400">Flotas y Empresas</a></li>
-                    <li><a href="#confianza" class="hover:text-green-400">Confianza</a></li>
-                    <li><a href="#contacto" class="hover:text-green-400">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="https://instagram.com/tallerwaltervass" target="_blank" class="text-pink-500 hover:text-pink-600 transition"
-                   onclick="gtag('event', 'social_instagram_click', { 'event_category': 'Social', 'event_label': 'Header Instagram' }); fbq('track', 'ViewContent', { content_name: 'Header Instagram' });">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="tel:+541160939778" class="cta-phone px-4 py-2 rounded-full flex items-center hover:bg-blue-700"
-                   onclick="gtag('event', 'lead_phone_call', { 'event_category': 'Lead', 'event_label': 'Header Call', 'value': 10 }); fbq('track', 'Contact', { content_name: 'Header Call' });">
-                    <i class="fas fa-phone-alt mr-2"></i> Llamar Ahora
-                </a>
-                <a href="https://wa.me/541160939778" target="_blank" class="cta-whatsapp px-4 py-2 rounded-full flex items-center hover:bg-green-700"
-                   onclick="gtag('event', 'lead_whatsapp_click', { 'event_category': 'Lead', 'event_label': 'Header WhatsApp', 'value': 10 }); fbq('track', 'Lead', { content_name: 'Header WhatsApp' });">
-                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-                </a>
-            </div>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="walter_vass_logo.png" alt="Taller Walter Vass">
+    </a>
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galería</a>
+      <a href="#flotas">Flotas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="https://wa.me/541160939778" class="nav-cta">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fas fa-bolt"></i> Mecánica Integral · Villa Lynch</span>
+      <h1>Tu auto en manos<span>expertas y honestas.</span></h1>
+      <p class="hero-sub">Diagnóstico claro, reparación rápida y garantía escrita. Atendemos particulares y flotas con la misma precisión y compromiso que esperás.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/541160939778" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Pedir diagnóstico
+        </a>
+        <a href="#servicios" class="btn btn-outline">
+          Ver servicios <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div><i class="fas fa-shield-alt"></i> Garantía escrita</div>
+        <div><i class="fas fa-clock"></i> Lun a Vie 9 a 18 · Sáb 9 a 14</div>
+        <div><i class="fas fa-map-marker-alt"></i> Villa Lynch, Bs. As.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEMAS -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-eyebrow">Por qué elegirnos</span>
+      <h2>Te evitamos los tres dolores de cabeza más comunes</h2>
+      <p>Sabemos lo que se siente llevar el auto y volver con más problemas. Por eso trabajamos distinto.</p>
+    </div>
+    <div class="problems">
+      <div class="problem-card">
+        <i class="fas fa-search-dollar"></i>
+        <h3>Diagnósticos confusos</h3>
+        <p>Te explicamos en palabras simples qué tiene tu auto, qué urge y qué puede esperar.</p>
+      </div>
+      <div class="problem-card">
+        <i class="fas fa-clock"></i>
+        <h3>Demoras infinitas</h3>
+        <p>Plazos reales y comunicación constante. Sin "vení mañana" eternos.</p>
+      </div>
+      <div class="problem-card">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h3>Presupuestos sorpresa</h3>
+        <p>Presupuesto cerrado por escrito antes de tocar una sola pieza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section section-dark">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-eyebrow">Nuestros Servicios</span>
+      <h2>Precisión y confianza para tu vehículo</h2>
+      <p>Equipamiento de última generación y mecánicos especializados para resolver lo que otros no pueden.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service">
+        <div class="service-img" style="background-image:url('servicio1.jpg')"></div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <span class="service-icon"><i class="fas fa-car-side"></i></span>
+          <h3 class="service-title">Mecánica General</h3>
+          <p class="service-desc">Servicios programados, embragues, distribución y reparaciones a medida.</p>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-bg text-white py-20 md:py-32 text-center relative">
-        <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="container mx-auto relative z-10 px-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-                Tu Auto Necesita Solución. Nosotros la Tenemos.
-            </h1>
-            <p class="text-xl md:text-2xl mb-8">
-                **Diagnóstico Honesto, Reparación Rápida y Garantía Real en Villa Lynch.**
-            </p>
-            <p class="text-lg md:text-xl mb-10">
-                Recuperá la Confianza en tu Vehículo. Mecánica de Precisión, Diagnóstico por Video y Entrega en el Día. Sin Vueltas, Solo Soluciones.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                <a href="https://wa.me/541160939778" target="_blank" class="cta-whatsapp text-xl font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-green-700 transition duration-300"
-                   onclick="gtag('event', 'lead_whatsapp_click', { 'event_category': 'Lead', 'event_label': 'Hero CTA WhatsApp', 'value': 15 }); fbq('track', 'Lead', { content_name: 'Hero CTA WhatsApp' });">
-                    <i class="fab fa-whatsapp mr-3"></i> ¡Quiero mi Diagnóstico por Video!
-                </a>
-                <a href="#contacto" class="bg-red-600 text-white text-xl font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
-                   onclick="gtag('event', 'form_view_lead_magnet', { 'event_category': 'Engagement', 'event_label': 'Hero CTA Form' });">
-                    <i class="fas fa-wrench mr-3"></i> ¡Diagnóstico Gratuito! (Oferta Limitada)
-                </a>
-            </div>
-            <div class="mt-8 text-lg flex flex-wrap justify-center gap-x-8 gap-y-4">
-                <span class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> Turnos en el día</span>
-                <span class="flex items-center"><i class="fas fa-video text-green-400 mr-2"></i> Diagnóstico por video</span>
-                <span class="flex items-center"><i class="fas fa-shield-alt text-green-400 mr-2"></i> Garantía en trabajos</span>
-                <span class="flex items-center"><i class="fas fa-dollar-sign text-green-400 mr-2"></i> Precios accesibles</span>
-            </div>
+      </article>
+      <article class="service">
+        <div class="service-img" style="background-image:url('servicio2.jpg')"></div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <span class="service-icon"><i class="fas fa-cogs"></i></span>
+          <h3 class="service-title">Reparación de Motor</h3>
+          <p class="service-desc">Trabajo de precisión con torque controlado y repuestos de primera marca.</p>
         </div>
-    </section>
-
-    <!-- Problemas Comunes (Harto de talleres...) -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10">¿Harto de talleres que no te dan respuestas?</h2>
-            <p class="text-lg mb-12">Si te identificás con alguna de estas situaciones, llegaste al lugar correcto. Nosotros lo hacemos diferente.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white p-6 rounded-lg shadow-md text-left">
-                    <i class="fas fa-frown text-red-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Diagnósticos Ocultos</h3>
-                    <p>Te dicen que hay que cambiar piezas y **nunca te muestran qué falló** realmente. Con nosotros, **lo ves en video**.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-left">
-                    <i class="fas fa-money-bill-wave text-red-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Gastos Innecesarios</h3>
-                    <p>Pagás una fortuna y el auto **sigue con el mismo problema** a los dos días. Te damos un **diagnóstico honesto**.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-left">
-                    <i class="fas fa-clock text-red-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Demoras Infinitas</h3>
-                    <p>Dejás el auto "para mañana" y lo **terminás retirando tres semanas después**. Nosotros te lo **entregamos en el día**.</p>
-                </div>
-            </div>
-            
-            <!-- Imágenes Reales del Taller -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-bold mb-8">📍 Así se ve nuestro taller en Villa Lynch. Real, sin filtros.</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-                    <img src="taller1.jpg" alt="Taller Walter Vass - Imagen 1" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <img src="taller2.jpg" alt="Taller Walter Vass - Imagen 2" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <img src="taller3.jpg" alt="Taller Walter Vass - Imagen 3" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <img src="taller4.jpg" alt="Taller Walter Vass - Imagen 4" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                </div>
-            </div>
+      </article>
+      <article class="service">
+        <div class="service-img" style="background-image:url('servicio3.jpg')"></div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <span class="service-icon"><i class="fas fa-bolt"></i></span>
+          <h3 class="service-title">Inyección Electrónica</h3>
+          <p class="service-desc">Diagnóstico y ajuste fino del sistema de inyección y sensores del motor.</p>
         </div>
-    </section>
-
-    <!-- Sección Servicios -->
-    <section id="servicios" class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Nuestros Servicios: Precisión y Confianza para tu Vehículo</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <i class="fas fa-cogs text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Reparación de Motores</h3>
-                    <p>Especialistas en diagnóstico y reparación profunda. Encontramos el problema real antes de tocar nada.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <i class="fas fa-car-side text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Mecánica General</h3>
-                    <p>Frenos, embrague, dirección, correas, service completo. Tu auto siempre a punto.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <i class="fas fa-laptop-code text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Diagnóstico Computarizado</h3>
-                    <p>Escáner de última generación para saber exactamente qué le pasa a tu auto.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <i class="fas fa-microchip text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Reparación de ECU</h3>
-                    <p>Recuperamos y reparamos la computadora de tu auto, evitá gastos innecesarios.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <i class="fas fa-snowflake text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Carga de Aire Acondicionado</h3>
-                    <p>Recarga de gas con equipamiento profesional. Prepará tu auto para el verano.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                    <i class="fas fa-shock text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-xl mb-2">Amortiguadores</h3>
-                    <p>Diagnóstico y reemplazo para que tu auto vuelva a andar suave y seguro.</p>
-                </div>
-            </div>
-            <p class="mt-10 text-lg text-red-600 font-semibold">⚠️ No realizamos trabajos de chapa ni pintura.</p>
+      </article>
+      <article class="service">
+        <div class="service-img" style="background-image:url('servicio4.jpg')"></div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <span class="service-icon"><i class="fas fa-tablet-alt"></i></span>
+          <h3 class="service-title">Scanner & Diagnóstico</h3>
+          <p class="service-desc">Lectura de fallas con equipos profesionales OBD multi-marca.</p>
         </div>
-    </section>
-
-    <!-- Sección Flotas y Empresas -->
-    <section id="flotas" class="section-flotas py-20">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Tu Flota en Marcha, Tu Negocio Imparable.</h2>
-            <p class="text-xl md:text-2xl mb-10">
-                **Mantenimiento Estratégico para Empresas.** Minimizamos tiempos de inactividad y optimizamos costos.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-left">
-                    <i class="fas fa-tachometer-alt text-green-400 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-2xl mb-2">Flotas Siempre Operativas</h3>
-                    <p>Atención preferencial y turnos flexibles para que tus vehículos no detengan tu negocio. Diagnóstico y reparación ágil para minimizar el tiempo fuera de servicio.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-left">
-                    <i class="fas fa-file-invoice-dollar text-green-400 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-2xl mb-2">Gestión Transparente y Eficiente</h3>
-                    <p>Ofrecemos facturación y procesos administrativos simples para empresas.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-left">
-                    <i class="fas fa-chart-line text-green-400 text-4xl mb-4"></i>
-                    <h3 class="font-bold text-2xl mb-2">Costos Bajo Control</h3>
-                    <p>Planes de mantenimiento a medida que extienden la vida útil de tus vehículos, previenen averías costosas y optimizan el consumo.</p>
-                </div>
-            </div>
-            <a href="#contacto-flotas" class="bg-yellow-500 text-gray-900 text-xl font-bold px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
-               onclick="gtag('event', 'form_view_flota', { 'event_category': 'Lead', 'event_label': 'CTA Flotas' }); fbq('track', 'Contact', { content_name: 'CTA Flotas' });">
-                <i class="fas fa-building mr-3"></i> Solicitá una Propuesta Personalizada para tu Flota
-            </a>
+      </article>
+      <article class="service">
+        <div class="service-img" style="background-image:url('servicio5.jpg')"></div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <span class="service-icon"><i class="fas fa-microchip"></i></span>
+          <h3 class="service-title">Reparación de ECU</h3>
+          <p class="service-desc">Reballing, soldadura y recuperación de computadoras y módulos electrónicos.</p>
         </div>
-    </section>
-
-    <!-- Sección Confianza / Por qué elegirnos -->
-    <section id="confianza" class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">No Somos el Taller Más Barato. Somos el Más Confiable.</h2>
-            <p class="text-lg mb-8">Calidad, honestidad y transparencia que se nota desde la primera llamada. Más de 10 años construyendo relaciones.</p>
-            <div class="mb-12 text-center">
-                <a href="https://instagram.com/tallerwaltervass" target="_blank" class="inline-block text-pink-500 hover:text-pink-600 transition" onclick="gtag('event', 'social_instagram_click', { 'event_category': 'Social', 'event_label': 'Confianza Instagram' }); fbq('track', 'ViewContent', { content_name: 'Confianza Instagram' });">
-                    <i class="fab fa-instagram text-4xl mr-2"></i>
-                    <span class="text-lg font-bold">Síguenos en Instagram @tallerwaltervass</span>
-                </a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-left">
-                    <span class="text-5xl font-bold text-blue-600 block mb-2">01</span>
-                    <h3 class="font-bold text-xl mb-2">Transparencia Total: Lo Ves en Video</h3>
-                    <p>Filmamos lo que encontramos y te lo enviamos por WhatsApp. Ves con tus propios ojos qué le pasa al auto antes de que toquemos nada. **Confianza sin secretos.**</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-left">
-                    <span class="text-5xl font-bold text-blue-600 block mb-2">02</span>
-                    <h3 class="font-bold text-xl mb-2">Rapidez Garantizada: Entregas en el Día</h3>
-                    <p>No perdés días sin tu auto. Trabajamos con compromiso de entrega real: lo dejás a la mañana, lo retirás a la tarde. **Tu tiempo vale.**</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-left">
-                    <span class="text-5xl font-bold text-blue-600 block mb-2">03</span>
-                    <h3 class="font-bold text-xl mb-2">Diagnóstico Honesto: Sin Sorpresas</h3>
-                    <p>Te decimos exactamente qué hay que arreglar y por qué. Si algo no es necesario, te lo decimos. **Tu bolsillo seguro.**</p>
-                </div>
-            </div>
+      </article>
+      <article class="service">
+        <div class="service-img" style="background-image:url('servicio6.jpg')"></div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <span class="service-icon"><i class="fas fa-snowflake"></i></span>
+          <h3 class="service-title">Aire Acondicionado</h3>
+          <p class="service-desc">Carga, detección de fugas y reparación de sistemas de A/C automotriz.</p>
         </div>
-    </section>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonios -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Lo que Dicen Nuestros Clientes: Confianza Comprobada</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-left">
-                    <div class="flex items-center mb-4">
-                        <span class="text-yellow-500 text-xl mr-2">★★★★★</span>
-                        <p class="font-semibold">Google Reviews</p>
-                    </div>
-                    <p class="italic mb-4">"Excelente servicio. Me enviaron videos de las partes a reparar, eso da mucha confianza. Recomendado 100%."</p>
-                    <p class="font-bold">Daniel Rivas</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-left">
-                    <div class="flex items-center mb-4">
-                        <span class="text-yellow-500 text-xl mr-2">★★★★★</span>
-                        <p class="font-semibold">Google Reviews</p>
-                    </div>
-                    <p class="italic mb-4">"Genera una confianza increíble. Dejó el auto 10 puntos. Altamente recomendable, gente de primera."</p>
-                    <p class="font-bold">Tomás Aguirre</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-left">
-                    <div class="flex items-center mb-4">
-                        <span class="text-yellow-500 text-xl mr-2">★★★★★</span>
-                        <p class="font-semibold">Google Reviews</p>
-                    </div>
-                    <p class="italic mb-4">"Diagnóstico claro, trabajo bien hecho y en el tiempo acordado. Sin sorpresas. Volvería sin dudarlo."</p>
-                    <p class="font-bold">Cintia Casagrande</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FLOTAS -->
+<section id="flotas" class="section section-light">
+  <div class="container">
+    <div class="flotas">
+      <span class="flotas-eyebrow"><i class="fas fa-truck-fast"></i> Empresas y Flotas</span>
+      <h3>Mantenimiento integral para tu flota, sin perder horas de trabajo</h3>
+      <p>Servicios programados, prioridad de atención, presupuestos cerrados y reportes mensuales. Tu flota siempre lista para operar.</p>
+      <a href="https://wa.me/541160939778?text=Hola,%20quiero%20una%20propuesta%20para%20mi%20flota" class="btn-flota">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Solicitá una propuesta personalizada para tu flota</span>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección Contacto / Lead Magnet -->
-    <section id="contacto" class="py-20 bg-blue-600 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">¿Tu Auto Pide Ayuda? ¡No Esperes Más!</h2>
-            <p class="text-xl md:text-2xl mb-10">
-                **Obtené un Diagnóstico Gratuito y Solucioná el Problema Hoy Mismo.**
-            </p>
-            <div class="form-container p-8 rounded-lg shadow-xl max-w-2xl mx-auto text-gray-800">
-                <h3 class="text-2xl font-bold mb-6">Completá el Formulario y te Contactamos al Instante</h3>
-                <form onsubmit="gtag('event', 'form_submit_particular', { 'event_category': 'Lead', 'event_label': 'Formulario Particular', 'value': 15 }); fbq('track', 'Lead', { content_name: 'Formulario Particular' }); return true;">
-                    <div class="mb-4 text-left">
-                        <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Nombre y Apellido:</label>
-                        <input type="text" id="nombre" name="nombre" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu Nombre" required>
-                    </div>
-                    <div class="mb-4 text-left">
-                        <label for="telefono" class="block text-gray-700 text-sm font-bold mb-2">Teléfono (WhatsApp):</label>
-                        <input type="tel" id="telefono" name="telefono" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="+54 9 11 XXXX-XXXX" required>
-                    </div>
-                    <div class="mb-6 text-left">
-                        <label for="mensaje" class="block text-gray-700 text-sm font-bold mb-2">Contanos brevemente tu problema:</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ej: Ruido en el motor, falla al arrancar..."></textarea>
-                    </div>
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
-                        <i class="fas fa-paper-plane mr-2"></i> Enviar Consulta y Obtener Diagnóstico Gratuito
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+<!-- GALERIA -->
+<section id="galeria" class="section section-light" style="padding-top:0">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-eyebrow">Nuestro Taller</span>
+      <h2>Así trabajamos en Villa Lynch</h2>
+      <p>Real, sin filtros. Equipamiento moderno y orden de trabajo serio.</p>
+    </div>
+    <div class="galeria">
+      <figure><img src="taller1.jpg" alt="Taller Walter Vass - Imagen 1" loading="lazy"></figure>
+      <figure><img src="taller2.jpg" alt="Taller Walter Vass - Imagen 2" loading="lazy"></figure>
+      <figure><img src="taller3.jpg" alt="Taller Walter Vass - Imagen 3" loading="lazy"></figure>
+      <figure><img src="taller4.jpg" alt="Taller Walter Vass - Imagen 4" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
 
-    <!-- Sección Contacto Flotas -->
-    <section id="contacto-flotas" class="py-20 bg-gray-800 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">¿Gestionás una Flota? Optimizá tus Costos y Operación.</h2>
-            <div class="form-container p-8 rounded-lg shadow-xl max-w-2xl mx-auto text-gray-800">
-                <h3 class="text-2xl font-bold mb-6">Completá el Formulario y un Asesor Corporativo te Contactará</h3>
-                <form onsubmit="gtag('event', 'form_submit_flota', { 'event_category': 'Lead', 'event_label': 'Formulario Flota', 'value': 50 }); fbq('track', 'Lead', { content_name: 'Formulario Flota' }); return true;">
-                    <div class="mb-4 text-left">
-                        <label for="empresa" class="block text-gray-700 text-sm font-bold mb-2">Nombre de la Empresa:</label>
-                        <input type="text" id="empresa" name="empresa" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu Empresa" required>
-                    </div>
-                    <div class="mb-4 text-left">
-                        <label for="telefono_flota" class="block text-gray-700 text-sm font-bold mb-2">Teléfono (WhatsApp):</label>
-                        <input type="tel" id="telefono_flota" name="telefono_flota" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="+54 9 11 XXXX-XXXX" required>
-                    </div>
-                    <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300">
-                        <i class="fas fa-envelope mr-2"></i> Enviar Solicitud de Propuesta
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+<!-- CTA FINAL -->
+<section class="cta-final" id="contacto">
+  <div class="container">
+    <h2>¿Listo para que tu auto vuelva a andar como nuevo?</h2>
+    <p>Escribinos por WhatsApp y coordinamos un diagnóstico hoy mismo.</p>
+    <a href="https://wa.me/541160939778" class="btn btn-whatsapp">
+      <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+    </a>
+  </div>
+</section>
 
-    <!-- Sección Mapa Final -->
-    <section id="ubicacion" class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">📍 ENCONTRANOS EN VILLA LYNCH</h2>
-            <p class="text-lg mb-8">Nuestra Señora del Rosario 776, Villa Lynch, Buenos Aires</p>
-            <div class="rounded-lg overflow-hidden shadow-xl max-w-5xl mx-auto h-96">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.5!2d-58.5402!3d-34.5826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zTnVlc3RyYSBTZcOxb3JhIGRlbCBSb3NhcmlvIDc3NiwgVmlsbGEgTHluY2gsIEJ1ZW5vcyBBaXJlcw!5e0!3m2!1ses!2sar!4v1700000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="mt-8">
-                <a href="https://www.google.com/maps/search/?api=1&query=Nuestra+Señora+del+Rosario+776,+Villa+Lynch" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300">
-                    <i class="fas fa-directions mr-2"></i> Cómo llegar
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="walter_vass_logo.png" alt="Taller Walter Vass">
+        <p>Mecánica integral con foco en diagnóstico honesto, plazos reales y garantía escrita. Particulares y flotas.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/541160939778"><i class="fa-brands fa-whatsapp"></i> +54 11 6093-9778</a></li>
+          <li><a href="tel:+541160939778"><i class="fas fa-phone"></i> Llamar al taller</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> Villa Lynch, Buenos Aires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horarios</h4>
+        <ul>
+          <li><i class="fas fa-clock"></i> Lun a Vie · 9:00 a 18:00</li>
+          <li><i class="fas fa-clock"></i> Sábado · 9:00 a 14:00</li>
+          <li><i class="fas fa-clock"></i> Domingo · Cerrado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Taller Walter Vass · Mecánica Integral</div>
+  </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="mb-4">© 2026 Taller Walter Vass. Todos los derechos reservados.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://instagram.com/tallerwaltervass" target="_blank" class="hover:text-pink-400" onclick="gtag('event', 'social_instagram_click', { 'event_category': 'Social', 'event_label': 'Footer Instagram' }); fbq('track', 'ViewContent', { content_name: 'Footer Instagram' });">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="https://wa.me/541160939778" target="_blank" class="hover:text-green-400"
-                   onclick="gtag('event', 'lead_whatsapp_click', { 'event_category': 'Lead', 'event_label': 'Footer WhatsApp', 'value': 10 }); fbq('track', 'Lead', { content_name: 'Footer WhatsApp' });">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                </a>
-                <a href="tel:+541160939778" class="hover:text-green-400"
-                   onclick="gtag('event', 'lead_phone_call', { 'event_category': 'Lead', 'event_label': 'Footer Call', 'value': 10 }); fbq('track', 'Contact', { content_name: 'Footer Call' });">
-                    <i class="fas fa-phone-alt text-2xl"></i>
-                </a>
-            </div>
-            <p class="mt-4">Lun a Vie 9:00 a 18:00 hs · Sáb 9:00 a 14:00 hs</p>
-        </div>
-    </footer>
+<a href="https://wa.me/541160939778" class="wa-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const id=this.getAttribute('href');
+    if(id.length>1){
+      const t=document.querySelector(id);
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+    }
+  });
+});
+</script>
 </body>
 </html>
