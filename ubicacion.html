@@ -225,7 +225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px">
-        <a href="https://maps.app.goo.gl/6dq3qxACMzndMjhP7" target="_blank" rel="noopener" class="btn btn-whatsapp" data-event="click_mapa" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'click_mapa',link_url:this.href});">
+        <a href="https://maps.app.goo.gl/6dq3qxACMzndMjhP7" target="_blank" rel="noopener" class="btn btn-whatsapp" >
           <i class="fas fa-map-marker-alt"></i> Abrir en Google Maps
         </a>
         <a href="https://wa.me/541160939778" class="btn btn-outline">
@@ -297,6 +297,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
       if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
     }
   });
+});
+
+// Tracking GTM dataLayer - WhatsApp & Google Maps
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a');
+  if(!a) return;
+  if(a.hasAttribute('data-event')) return; // ya trackeado inline
+  var href = (a.getAttribute('href') || '').toLowerCase();
+  window.dataLayer = window.dataLayer || [];
+  if(href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1 || href.indexOf('whatsapp.com') !== -1){
+    window.dataLayer.push({event: 'click_whatsapp', link_url: a.href});
+  } else if(href.indexOf('google.com/maps') !== -1 || href.indexOf('maps.app.goo.gl') !== -1 || href.indexOf('goo.gl/maps') !== -1){
+    window.dataLayer.push({event: 'click_mapa', link_url: a.href});
+  }
 });
 </script>
 </body>
